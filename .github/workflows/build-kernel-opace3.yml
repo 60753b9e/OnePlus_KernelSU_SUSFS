@@ -2,6 +2,7 @@ name: Build OnePlus Ace3 Android 13 5.15 Kernel
 
 on:
   workflow_call:  # This allows this workflow to be called from another workflow
+  workflow_dispatch:
   
 jobs:
   build-kernel-a13-5-15-kernelsu-susfs:
