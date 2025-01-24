@@ -1,4 +1,4 @@
-name: Build OnePlus 11 Android 13 5.15 Kernel
+name: Build OnePlus Ace3 Android 13 5.15 Kernel
 
 on:
   workflow_call:  # This allows this workflow to be called from another workflow
@@ -31,7 +31,7 @@ jobs:
       - name: Set CONFIG Environment Variable
         run: |
           # Set CONFIG dynamically based on matrix values
-          CONFIG="op11"
+          CONFIG="opace3"
           
           # Set CONFIG as an environment variable for future steps
           echo "CONFIG=$CONFIG" >> $GITHUB_ENV
@@ -71,7 +71,7 @@ jobs:
           
           # Initialize and sync kernel source
           echo "Initializing and syncing kernel source..."
-          $REPO init -u https://github.com/OnePlusOSS/kernel_manifest.git -b oneplus/sm8550 -m oneplus_11_v.xml --repo-rev=v2.16 --depth=1
+          $REPO init -u https://git.nekocat.org/NekoSakura/kernel_build -b main -m oneplus_ace3_a15.xml --depth=1
           
           # Sync repo and apply patches
           $REPO --version
